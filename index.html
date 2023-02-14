@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            color: red;
+        }
+        input:focus{
+            background-color: aquamarine;
+        }
+        #datosGenerales label{
+            background-color: cadetblue;
+        }
+        legend{
+            text-align: center;
+            font-size: 2.4em;
+        }
+        fieldset{
+            background-color: beige;
+        }
+        input:checked{
+            width: 3.3em;
+        }
+        
+        @-moz-document url-prefix() {
+            body{
+                background-color: aquamarine;
+            }
+        }
+        @supports (-ms-ime-align:auto) {
+            body{background-color: darkslategray;
+            }
+        }
+       @media (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm){
+        body{
+            background-color: darksalmon;
+        }
+       }
+    </style>
+</head>
+<body>
+    <dialog open>
+        <p>Bienvenidos a mi formulario</p>
+        <form method="dialog">
+          <button>Gracias y cerrar</button>
+        </form>
+      </dialog>
+    <form>
+        <fieldset id="datosGenerales">
+            <legend>Datos de usuario: </legend>
+            <label aria-readonly="true">Estos campos son obligatorios</label><br>
+            <hr>
+            <label>Nombre: </label>
+            <input type="text" tabindex="1">
+            <label>Email: </label>
+            <input type="email" tabindex="2" pattern="^[\w.+\-]+@gmail\.com$">
+            <label>Contraseña: </label>
+            <input type="password" tabindex="1">
+            <label>Dni: </label>
+            <input type="text" pattern="[0-9]{8}[A-Za-z]{1}">
+            
+        </fieldset>
+        <fieldset id="sexo">
+            <legend>Elige tu sexo</legend>
+            <input type="radio" accesskey="j" id="masculino" name="sexo">
+            <label>Masculino</label>
+            <input type="radio" id="femenino" name="sexo">
+            <label>Femenino</label>
+            <input type="radio" id="nulo" name="sexo">
+            <label>Prefiero no decirlo</label>
+        </fieldset>
+        <fieldset id="edad">
+            <Legend>Edad</Legend>
+            <details>
+                <summary>Descripcion del campo edad</summary>
+                Se divide en 3 segmentos por practicidad
+            </details>
+            <select name="edad">
+                <option value="" selected disabled>Que edad tienes?</option>
+                <option value="joven">1-25</option>
+                <option value="adulto">26-65</option>
+                <option value="anciano">66-100+</option>
+            </select>
+        </fieldset>
+        <fieldset id="aficiones">
+            <legend>Describe tus aficiones</legend>
+            <textarea name="" id="" cols="100" rows="4"></textarea>
+        </fieldset>
+        <fieldset>
+            <legend>Tus 3 paises favoritos de esta lista:</legend>
+            <input type="checkbox" name="paises" id="spain">
+            <label>España</label>
+            <input type="checkbox" name="paises" id="france">
+            <label>Francia</label>
+            <input type="checkbox" name="paises" id="brazil">
+            <label>Brasil</label>
+            <input type="checkbox" name="paises" id="india">
+            <label>India</label>
+            <input type="checkbox" name="paises" id="mexico">
+            <label>Mexico</label>
+            <input type="checkbox" name="paises" id="costaRica">
+            <label>Costa rica</label>
+            <input type="checkbox" name="paises" id="australia">
+            <label>Australia</label>
+
+        </fieldset>
+        <br>
+        <button type="submit">Enviar</button>
+        <br>
+        <br>
+        <button type="reset">Resetear</button>
+    </form>
+</body>
+</html>
